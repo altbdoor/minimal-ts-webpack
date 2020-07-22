@@ -16,7 +16,7 @@
     "scripts": {
         "start": "webpack-dev-server --config=webpack.config.js",
         "build": "webpack --config=webpack.config.js --mode=production --devtool=false",
-        "pretty": "prettier --write ./*.{json,js} src/index.html src/**/*.ts"
+        "pretty": "prettier --write ./*.{json,js} src/**/*.{html,ts,css}"
     },
     "prettier": {
         "tabWidth": 4,
