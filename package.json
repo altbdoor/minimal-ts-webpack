@@ -1,4 +1,6 @@
 {
+    "$schema": "https://json.schemastore.org/package",
+    "private": true,
     "dependencies": {
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^3.6.0",
