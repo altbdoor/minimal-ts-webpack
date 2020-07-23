@@ -22,7 +22,10 @@
     },
     "prettier": {
         "tabWidth": 4,
-        "semi": false,
+        "semi": true,
         "singleQuote": true
+    },
+    "eslintConfig": {
+        "extends": "eslint:recommended"
     }
 }

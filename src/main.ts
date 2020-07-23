@@ -1,3 +1,3 @@
-import './main.css'
+import './main.css';
 
-console.log('Hello world')
+console.log('Hello world');

@@ -1,9 +1,9 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: './src/main.ts',
@@ -53,6 +53,7 @@ module.exports = {
     output: {
         filename: '[name]-[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
+        chunkFilename: '[name]-[contenthash].js',
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -69,4 +70,4 @@ module.exports = {
         stats: 'errors-only',
         port: 8000,
     },
-}
+};
