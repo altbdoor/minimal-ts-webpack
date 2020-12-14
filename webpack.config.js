@@ -20,10 +20,7 @@ module.exports = /** @type { import('webpack').Configuration } */ {
             },
             {
                 test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                ],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.html$/,
@@ -31,15 +28,7 @@ module.exports = /** @type { import('webpack').Configuration } */ {
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]?[contenthash]',
-                            context: 'src',
-                        },
-                    },
-                ],
+                type: 'asset/resource'
             },
         ],
     },
@@ -47,9 +36,10 @@ module.exports = /** @type { import('webpack').Configuration } */ {
         extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        filename: '[name]-[hash].js',
+        filename: '[name]-[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         chunkFilename: '[name]-[contenthash].js',
+        assetModuleFilename: 'assets/[name][ext]?[hash]',
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -60,10 +50,10 @@ module.exports = /** @type { import('webpack').Configuration } */ {
             filename: '[name]-[contenthash].css',
         }),
     ],
-    devtool: 'inline-source-map',
     devServer: {
         contentBase: './dist',
         stats: 'errors-only',
         port: 8000,
+        publicPath: '/',
     },
 };
